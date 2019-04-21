@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
 
     init {
 
-        mPageModel.add(PageModel(R.layout.view_dash_board, R.string.dash_board))
+        mPageModel.add(PageModel(R.layout.view_round_image, R.string.round_image))
         mPageModel.add(PageModel(R.layout.view_pie_chart, R.string.pie_chart))
-//        mPageModel.add(PageModel(R.layout.view_round_image, R.string.round_image))
+        mPageModel.add(PageModel(R.layout.view_dash_board, R.string.dash_board))
 
     }
 
@@ -86,7 +86,6 @@ class MainActivity : AppCompatActivity() {
             return view
         }
     }
-
 
     class PageModel(@LayoutRes val layoutRes:Int,@StringRes val title:Int)
 

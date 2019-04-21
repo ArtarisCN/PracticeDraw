@@ -3,6 +3,7 @@ package cn.artaris.hencodepractice.PieChart
 import android.R
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.support.annotation.ColorRes
 import android.support.v4.content.ContextCompat
@@ -21,7 +22,8 @@ class PieChart : View {
     private val RADIUS = dp2px(150f)
     private val mDataList = ArrayList<ChartData>()
 
-    private  var mPaint:Paint
+    private var mPaint: Paint
+    private var mRadius = RADIUS
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
@@ -36,26 +38,30 @@ class PieChart : View {
         mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     }
 
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        mRadius = Math.min(width - paddingLeft - paddingRight, height - paddingTop - paddingBottom) / 2f
+    }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        canvas.translate((width /2).toFloat(), (height /2).toFloat())
+        canvas.drawColor(Color.WHITE)
+        canvas.translate((width / 2).toFloat(), (height / 2).toFloat())
         var startAngle = 0f
-        for (chartData in mDataList) {
-            if(mDataList.indexOf(chartData) == 2){
+        mDataList.forEach {
+            if (mDataList.indexOf(it) == 2) {
                 canvas.save()
                 canvas.translate(-dp2px(10f), -dp2px(10f))
             }
-            mPaint.color = ContextCompat.getColor(context,chartData.color)
-            canvas.drawArc(-RADIUS,-RADIUS,RADIUS,RADIUS,startAngle,chartData.degree,true,mPaint)
-            startAngle += chartData.degree
-            if(mDataList.indexOf(chartData) == 2){
+            mPaint.color = ContextCompat.getColor(context, it.color)
+            canvas.drawArc(-mRadius, -mRadius, mRadius, mRadius, startAngle, it.degree, true, mPaint)
+            startAngle += it.degree
+            if (mDataList.indexOf(it) == 2) {
                 canvas.restore()
             }
         }
     }
 
 
-    private class ChartData(@ColorRes val color:Int,val degree: Float)
+    private class ChartData(@ColorRes val color: Int, val degree: Float)
 }

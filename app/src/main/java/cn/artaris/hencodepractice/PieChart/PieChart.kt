@@ -19,7 +19,7 @@ import cn.artaris.hencodepractice.dp2px
  */
 class PieChart : View {
 
-    private val RADIUS = dp2px(150f)
+    private val RADIUS = 150f.dp2px()
     private val mDataList = ArrayList<ChartData>()
 
     private var mPaint: Paint
@@ -51,7 +51,7 @@ class PieChart : View {
         mDataList.forEach {
             if (mDataList.indexOf(it) == 2) {
                 canvas.save()
-                canvas.translate(-dp2px(10f), -dp2px(10f))
+                canvas.translate((-10f).dp2px(), (-10f).dp2px())
             }
             mPaint.color = ContextCompat.getColor(context, it.color)
             canvas.drawArc(-mRadius, -mRadius, mRadius, mRadius, startAngle, it.degree, true, mPaint)

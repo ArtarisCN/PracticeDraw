@@ -16,17 +16,17 @@ import cn.artaris.hencodepractice.dp2px
 class RoundImage : View {
 
     private val DEFAULT_BOARD_COLOR: Int = Color.BLACK
-    private val DEFAULT_BOARD_WIDTH: Float = dp2px(12f)
+    private val DEFAULT_BOARD_WIDTH: Float = 12f.dp2px()
 
-    private var mBoarderWidth: Float
     private var mBoardColor: Int
+    private var mBoarderWidth: Float
 
     private lateinit var mAvatar: Bitmap
 
-    private var mPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var mRadius: Float = 0f
-    private var mXfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
     private var mCut: RectF = RectF()
+    private var mPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var mXfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -65,7 +65,6 @@ class RoundImage : View {
         canvas.restoreToCount(saved)
     }
 
-
     private fun getAvatar(): Bitmap {
         val option = BitmapFactory.Options()
         option.inJustDecodeBounds = true
@@ -77,6 +76,4 @@ class RoundImage : View {
 
         return BitmapFactory.decodeResource(resources, R.drawable.avatar, option)
     }
-
-
 }

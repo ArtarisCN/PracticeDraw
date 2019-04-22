@@ -1,5 +1,8 @@
 package cn.artaris.hencodepractice.DashBoard
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
@@ -15,23 +18,29 @@ import cn.artaris.hencodepractice.dp2px
  */
 class DashBoardView : View {
 
-    private val DEFAULT_MAX_INDEX = 20
     private val DEFAULT_RADIUS = 400f
+    private val DEFAULT_MAX_INDEX = 20
     private val DEFAULT_STOKEN_WIDTH = 4f
 
     private val START_ANGLE = 150
     private val SWEEP_ANGLE = 240
 
 
-    private var mIndex: Int = 12
+    var mIndex: Int = 12
     private var mMaxScale: Int
     private var mRadius: Float
     private var mStrokeWidth: Float
 
     private lateinit var mPaint: Paint
     private lateinit var mBoardPath: Path
+    private lateinit var mPointerPath: Path
     private lateinit var mPathMeasure: PathMeasure
     private lateinit var mPathEffect: PathDashPathEffect
+
+    private var mMoveAnimatorValue = 1f
+    private var mChangeIndex: Int = mIndex
+    private lateinit var mMoveAnimator: ValueAnimator
+
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -43,11 +52,12 @@ class DashBoardView : View {
 
         initPaint()
         intiPath()
+        initAnimate()
     }
-
 
     private fun intiPath() {
         mBoardPath = Path()
+        mPointerPath = Path()
         val boardRectF =
             RectF(width - mRadius, -mRadius, mRadius, mRadius)
         mBoardPath.addArc(boardRectF, START_ANGLE.toFloat(), SWEEP_ANGLE.toFloat())
@@ -58,15 +68,15 @@ class DashBoardView : View {
         scalePath.addRect(
             0f,
             0f,
-            dp2px(1f),
-            dp2px(10f),
+            1f.dp2px(),
+            10f.dp2px(),
             Path.Direction.CCW
         )
 
         mPathEffect =
             PathDashPathEffect(
                 scalePath,
-                (mPathMeasure.length - dp2px(2f)) / (mMaxScale),
+                (mPathMeasure.length - 1f.dp2px()) / (mMaxScale),
                 0f,
                 PathDashPathEffect.Style.ROTATE
             )
@@ -76,6 +86,25 @@ class DashBoardView : View {
         mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         mPaint.style = Paint.Style.STROKE
         mPaint.strokeWidth = mStrokeWidth
+    }
+
+    private fun initAnimate() {
+        mMoveAnimator = ValueAnimator.ofFloat(0f, 1f)
+        mMoveAnimator.addUpdateListener {
+            mMoveAnimatorValue = it.animatedValue as Float
+            invalidate()
+        }
+    }
+
+    public fun setIndex(index: Int) {
+        mChangeIndex = index
+        mMoveAnimator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                super.onAnimationEnd(animation)
+                mIndex = mChangeIndex
+            }
+        })
+        mMoveAnimator.start()
     }
 
 
@@ -99,18 +128,39 @@ class DashBoardView : View {
         canvas.drawPoint(0f, 0f, mPaint)
         canvas.drawPath(mBoardPath, mPaint)
         mPaint.pathEffect = mPathEffect
-        mPaint.strokeWidth = dp2px(1f)
+        mPaint.strokeWidth = 1f.dp2px()
+        mPaint.strokeCap = Paint.Cap.ROUND
         canvas.drawPath(mBoardPath, mPaint)
         mPaint.pathEffect = null
 
-        val angle:Double = (START_ANGLE.toFloat() + mIndex.toFloat() / mMaxScale.toFloat() * SWEEP_ANGLE.toFloat()).toDouble()
-        canvas.drawLine(
-            0f,
-            0f,
+        //仪表盘角度
+        val angle: Double =
+            (START_ANGLE.toFloat() + (mIndex + (mChangeIndex - mIndex) * mMoveAnimatorValue) / mMaxScale.toFloat() * SWEEP_ANGLE.toFloat()).toDouble()
+
+        mPointerPath.reset()
+        //从原点画至指针端点
+        mPointerPath.lineTo(
             (Math.cos(Math.toRadians(angle)) * mRadius * 0.6).toFloat(),
-            (Math.sin(Math.toRadians(angle)) * mRadius * 0.6).toFloat(),
-            mPaint
+            (Math.sin(Math.toRadians(angle)) * mRadius * 0.6).toFloat()
         )
+
+        //计算 指针端点左右两个短线 相对于 指针端点 的相对坐标
+        val leftX = (Math.cos(Math.toRadians(angle-150)) * 10f.dp2px()).toFloat()
+        val leftY = (Math.sin(Math.toRadians(angle-150)) * 10f.dp2px()).toFloat()
+
+        val rightX = (Math.cos(Math.toRadians(angle-210)) * 10f.dp2px()).toFloat()
+        val rightY = (Math.sin(Math.toRadians(angle-210)) * 10f.dp2px()).toFloat()
+
+        //以指针端点先向左画短线
+        mPointerPath.rLineTo(leftX,leftY)
+        //以回到指针端点
+        mPointerPath.rMoveTo(-leftX,-leftY)
+        //以指针端点先向右画短线
+        mPointerPath.rLineTo(rightX,rightY)
+
+        mPaint.strokeWidth = 2f.dp2px()
+        mPaint.strokeJoin = Paint.Join.ROUND
+        canvas.drawPath(mPointerPath,mPaint)
     }
 
 

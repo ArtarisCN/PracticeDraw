@@ -12,6 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewStub
+import cn.artaris.hencodepractice.DashBoard.DashBoardFragment
+import cn.artaris.hencodepractice.ProgressMark.ProgressMarkFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,14 +21,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pager: ViewPager
 
     private var mPageModel = ArrayList<PageModel>()
+    private var mPageFragment = ArrayList<PageFragment>()
 
 
     init {
 
+        mPageFragment.add(PageFragment.newInstance(R.layout.view_round_image))
+        mPageFragment.add(PageFragment.newInstance(R.layout.view_pie_chart))
+        mPageFragment.add(DashBoardFragment())
+        mPageFragment.add(ProgressMarkFragment())
+
         mPageModel.add(PageModel(R.layout.view_round_image, R.string.round_image))
         mPageModel.add(PageModel(R.layout.view_pie_chart, R.string.pie_chart))
         mPageModel.add(PageModel(R.layout.view_dash_board, R.string.dash_board))
-
+        mPageModel.add(PageModel(R.layout.view_dash_board, R.string.progress_mark))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         pager = findViewById(R.id.view_paper)
         pager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(p0: Int): Fragment {
-                val pageModel = mPageModel[p0]
-                return PageFragment.newInstance(pageModel.layoutRes)
+                return mPageFragment[p0]
             }
 
             override fun getCount(): Int {

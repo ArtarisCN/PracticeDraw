@@ -10,6 +10,4 @@ import android.util.TypedValue
  * @author : artairs
  */
 
-public fun dp2px(dp:Float):Float{
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
-}
+fun Float.dp2px() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this, Resources.getSystem().displayMetrics)

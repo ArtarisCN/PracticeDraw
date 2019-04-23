@@ -26,11 +26,13 @@ class MainActivity : AppCompatActivity() {
 
     init {
 
+        mPageFragment.add(PageFragment.newInstance(R.layout.view_cycle_percent))
         mPageFragment.add(PageFragment.newInstance(R.layout.view_round_image))
         mPageFragment.add(PageFragment.newInstance(R.layout.view_pie_chart))
         mPageFragment.add(DashBoardFragment())
         mPageFragment.add(ProgressMarkFragment())
 
+        mPageModel.add(PageModel(R.layout.view_cycle_percent, R.string.cycle_percent))
         mPageModel.add(PageModel(R.layout.view_round_image, R.string.round_image))
         mPageModel.add(PageModel(R.layout.view_pie_chart, R.string.pie_chart))
         mPageModel.add(PageModel(R.layout.view_dash_board, R.string.dash_board))

@@ -1,4 +1,4 @@
-package cn.artaris.hencodepractice
+package cn.artaris.customview
 
 import android.os.Bundle
 import android.support.annotation.LayoutRes
@@ -12,8 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewStub
-import cn.artaris.hencodepractice.DashBoard.DashBoardFragment
-import cn.artaris.hencodepractice.ProgressMark.ProgressMarkFragment
+import cn.artaris.customview.DashBoard.DashBoardFragment
+import cn.artaris.customview.ProgressMark.ProgressMarkFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,22 +21,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pager: ViewPager
 
     private var mPageModel = ArrayList<PageModel>()
-    private var mPageFragment = ArrayList<PageFragment>()
-
 
     init {
 
-        mPageFragment.add(PageFragment.newInstance(R.layout.view_cycle_percent))
-        mPageFragment.add(PageFragment.newInstance(R.layout.view_round_image))
-        mPageFragment.add(PageFragment.newInstance(R.layout.view_pie_chart))
-        mPageFragment.add(DashBoardFragment())
-        mPageFragment.add(ProgressMarkFragment())
-
-        mPageModel.add(PageModel(R.layout.view_cycle_percent, R.string.cycle_percent))
-        mPageModel.add(PageModel(R.layout.view_round_image, R.string.round_image))
-        mPageModel.add(PageModel(R.layout.view_pie_chart, R.string.pie_chart))
-        mPageModel.add(PageModel(R.layout.view_dash_board, R.string.dash_board))
-        mPageModel.add(PageModel(R.layout.view_dash_board, R.string.progress_mark))
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_camera_view), R.string.camera_view))
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_image_text), R.string.image_text))
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_cycle_percent), R.string.cycle_percent))
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_round_image), R.string.round_image))
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_pie_chart), R.string.pie_chart))
+        mPageModel.add(PageModel(DashBoardFragment(), R.string.dash_board))
+        mPageModel.add(PageModel(ProgressMarkFragment(), R.string.progress_mark))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         pager = findViewById(R.id.view_paper)
         pager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(p0: Int): Fragment {
-                return mPageFragment[p0]
+                return mPageModel[p0].fragment
             }
 
             override fun getCount(): Int {
@@ -96,6 +90,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    class PageModel(@LayoutRes val layoutRes:Int,@StringRes val title:Int)
+    class PageModel(val fragment:PageFragment,@StringRes val title:Int)
 
 }

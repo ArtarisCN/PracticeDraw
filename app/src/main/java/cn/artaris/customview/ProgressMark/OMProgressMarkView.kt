@@ -8,7 +8,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import cn.artaris.hencodepractice.R
+import cn.artaris.customview.R
 
 /**
  * cn.artaris.omview.dialog

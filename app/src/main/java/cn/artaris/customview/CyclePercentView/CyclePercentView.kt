@@ -1,4 +1,4 @@
-package cn.artaris.hencodepractice.CyclePercentView
+package cn.artaris.customview.CyclePercentView
 
 import android.animation.ValueAnimator
 import android.animation.ValueAnimator.RESTART
@@ -6,8 +6,8 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import cn.artaris.hencodepractice.R
-import cn.artaris.hencodepractice.dp2px
+import cn.artaris.customview.R
+import cn.artaris.customview.dp2px
 
 /**
  * cn.artaris.hencodepractice.CyclePercentView
@@ -102,8 +102,6 @@ class CyclePercentView : View {
 
         mPaint.getTextBounds(text, 0, text.length, mTextBounds)
         mPaint.style = Paint.Style.FILL
-        println(mFontMetrics.ascent)
-        println(mFontMetrics.descent)
         canvas.drawText(
             text,
             (-mTextBounds.right / 2).toFloat(),

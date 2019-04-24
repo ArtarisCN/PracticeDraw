@@ -1,11 +1,11 @@
-package cn.artaris.hencodepractice.JIkeLike
+package cn.artaris.customview.JIkeLike
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.AttributeSet
 import android.widget.LinearLayout
-import cn.artaris.hencodepractice.R
+import cn.artaris.customview.R
 
 /**
  * cn.artaris.hencodepractice.JIkeLike

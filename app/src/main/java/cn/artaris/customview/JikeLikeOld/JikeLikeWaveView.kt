@@ -1,4 +1,4 @@
-package cn.artaris.hencodepractice.JikeLikeOld
+package cn.artaris.customview.JikeLikeOld
 
 import android.content.Context
 import android.util.AttributeSet

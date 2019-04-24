@@ -1,4 +1,4 @@
-package cn.artaris.hencodepractice.JikeLikeOld
+package cn.artaris.customview.JikeLikeOld
 
 import android.animation.AnimatorSet
 import android.animation.PropertyValuesHolder
@@ -6,7 +6,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.widget.FrameLayout
-import cn.artaris.hencodepractice.R
+import cn.artaris.customview.R
 
 /**
  * cn.artaris.hencodepractice.JikeLike

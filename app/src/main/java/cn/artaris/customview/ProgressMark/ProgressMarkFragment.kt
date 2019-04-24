@@ -1,12 +1,12 @@
-package cn.artaris.hencodepractice.ProgressMark
+package cn.artaris.customview.ProgressMark
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import cn.artaris.hencodepractice.MainActivity
-import cn.artaris.hencodepractice.R
+import cn.artaris.customview.MainActivity
+import cn.artaris.customview.R
 import cn.artaris.omview.dialog.OMProgressMarkView
 
 /**

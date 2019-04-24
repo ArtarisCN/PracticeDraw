@@ -1,12 +1,12 @@
-package cn.artaris.hencodepractice.DashBoard
+package cn.artaris.customview.DashBoard
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import cn.artaris.hencodepractice.MainActivity
-import cn.artaris.hencodepractice.R
+import cn.artaris.customview.MainActivity
+import cn.artaris.customview.R
 
 /**
  * cn.artaris.hencodepractice.DashBoard

@@ -1,4 +1,4 @@
-package cn.artaris.hencodepractice.PieChart
+package cn.artaris.customview.PieChart
 
 import android.R
 import android.content.Context
@@ -9,7 +9,7 @@ import android.support.annotation.ColorRes
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
-import cn.artaris.hencodepractice.dp2px
+import cn.artaris.customview.dp2px
 
 /**
  * cn.artaris.hencodepractice

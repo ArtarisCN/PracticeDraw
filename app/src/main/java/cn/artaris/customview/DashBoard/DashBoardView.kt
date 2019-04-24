@@ -1,4 +1,4 @@
-package cn.artaris.hencodepractice.DashBoard
+package cn.artaris.customview.DashBoard
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -7,8 +7,8 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import cn.artaris.hencodepractice.R
-import cn.artaris.hencodepractice.dp2px
+import cn.artaris.customview.R
+import cn.artaris.customview.dp2px
 
 /**
  * cn.artaris.hencodepractice

@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     init {
 
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_animate_camera_view), R.string.animate_camera_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_camera_view), R.string.camera_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_image_text), R.string.image_text))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_cycle_percent), R.string.cycle_percent))

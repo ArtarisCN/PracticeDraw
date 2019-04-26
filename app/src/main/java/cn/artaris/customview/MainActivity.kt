@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var mPageModel = ArrayList<PageModel>()
 
     init {
-
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_material_view), R.string.material_edit_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_animate_camera_view), R.string.animate_camera_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_camera_view), R.string.camera_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_image_text), R.string.image_text))

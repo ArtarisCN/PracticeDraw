@@ -46,7 +46,7 @@ class MaterialEditText : EditText {
     /*================================================================================================================*/
 
     /*=============================================报错代码============================================================*/
-   /* Caused by: java.lang.NullPointerException: Attempt to invoke virtual method
+    /*Line:59  Caused by: java.lang.NullPointerException: Attempt to invoke virtual method
     'boolean android.graphics.drawable.Drawable.getPadding(android.graphics.Rect)'
     on a null object reference*/
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs,0)

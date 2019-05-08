@@ -50,6 +50,12 @@ class CameraView : View {
 
         canvas.drawColor(Color.WHITE)
 
+        mCutRect.set(
+            -mRadius * 1.5f,
+            0f,
+            mRadius * 1.5f,
+            mRadius * 1.5f
+        )
         canvas.save()
         canvas.translate((width / 2).toFloat(), (height / 2).toFloat())
         canvas.rotate(-20f)

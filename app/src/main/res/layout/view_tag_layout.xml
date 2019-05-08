@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.artaris.customview.TagLayout.TagLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tag_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="钢铁侠" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="绿巨人" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="黑豹" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="美国队长" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="蜘蛛侠" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="黑寡妇" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="战争机器" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="雷神" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="猎鹰" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="奇异博士" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="惊奇队长" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="冬日战士" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="小辣椒" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="洛基" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="洛基" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="蚁人" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="鹰眼" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="猩红女巫" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="快银" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="幻视" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="奥创" />
+
+    <cn.artaris.customview.TagLayout.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="灭霸" />
+</cn.artaris.customview.TagLayout.TagLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="board_width" format="dimension" />
+    <attr name="board_color" format="color" />
+
+
+    <declare-styleable name="JikeLikeViewAttrs">
+        <attr name="has_shine" format="boolean" />
+        <attr name="like_image_unselected" format="reference" />
+        <attr name="like_image_selected" format="reference" />
+        <attr name="like_count" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="DashBoardViewAttrs">
+        <attr name="scale" format="integer" />
+        <attr name="radius" format="float" />
+        <attr name="stroke_width" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageAttrs">
+        <attr name="board_width"  />
+        <attr name="board_color"  />
+        <attr name="avatar_res" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressMarkView">
+        <attr name="progress_color" format="color" />
+        <attr name="progress_width" format="dimension" />
+        <attr name="progress_radius" format="dimension" />
+        <attr name="load_success_color" format="color" />
+        <attr name="load_failure_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CyclePercentAttrs">
+        <attr name="board_width"  />
+        <attr name="board_color" />
+        <attr name="board_bg_color" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MaterialEditText">
+        <attr name="hint_text" format="string" />
+    </declare-styleable>
+
+
+
+</resources>

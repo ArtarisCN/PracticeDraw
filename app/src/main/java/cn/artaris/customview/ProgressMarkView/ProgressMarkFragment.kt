@@ -1,4 +1,4 @@
-package cn.artaris.customview.ProgressMark
+package cn.artaris.customview.ProgressMarkView
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import cn.artaris.customview.MainActivity
 import cn.artaris.customview.R
-import cn.artaris.omview.dialog.OMProgressMarkView
+import cn.artaris.omview.dialog.ProgressMarkView
 
 /**
  * cn.artaris.hencodepractice.DashBoard
@@ -17,7 +17,7 @@ import cn.artaris.omview.dialog.OMProgressMarkView
  */
 class ProgressMarkFragment:MainActivity.PageFragment() {
 
-    private lateinit var mProgressMarkView: OMProgressMarkView
+    private lateinit var mProgressMarkView: ProgressMarkView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_progress_view, container, false)

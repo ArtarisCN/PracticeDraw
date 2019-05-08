@@ -2,7 +2,6 @@
 *.apk
 *.ap_
 *.aab
-*.xml
 .idea/
 
 # Files for the ART/Dalvik VM

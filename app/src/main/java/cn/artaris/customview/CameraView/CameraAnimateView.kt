@@ -37,7 +37,6 @@ class CameraAnimateView : View {
 
     init {
         mCamera.setLocation(0f, 0f, getZForCamera())
-
         initAnimate()
     }
 
@@ -90,7 +89,6 @@ class CameraAnimateView : View {
 
         canvas.drawColor(Color.WHITE)
         if (mStartAnimatorValue < 1f) {
-
             mCutRect.set(
                 -mRadius * 1.5f,
                 0f,

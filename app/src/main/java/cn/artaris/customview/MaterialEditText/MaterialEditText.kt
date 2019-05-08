@@ -34,23 +34,7 @@ class MaterialEditText : EditText {
 
     constructor(context: Context) : this(context, null)
 
-    /*=============================================可运行代码==========================================================*/
-//    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs){
-//        val array = context.obtainStyledAttributes(attrs, R.styleable.MaterialEditText)
-//        mHint = array.getString(R.styleable.MaterialEditText_hint_text)
-//        array.recycle()
-//
-//        background.getPadding(mBackgroundPadding)
-//        init()
-//    }
-    /*================================================================================================================*/
-
-    /*=============================================报错代码============================================================*/
-    /*Line:59  Caused by: java.lang.NullPointerException: Attempt to invoke virtual method
-    'boolean android.graphics.drawable.Drawable.getPadding(android.graphics.Rect)'
-    on a null object reference*/
-    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs,0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr){
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs){
         val array = context.obtainStyledAttributes(attrs, R.styleable.MaterialEditText)
         mHint = array.getString(R.styleable.MaterialEditText_hint_text)
         array.recycle()
@@ -58,8 +42,6 @@ class MaterialEditText : EditText {
         background.getPadding(mBackgroundPadding)
         init()
     }
-    /*================================================================================================================*/
-
 
 
     private fun init() {

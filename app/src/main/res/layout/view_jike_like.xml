@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.artaris.customview.JikeLikeOld.JikeLikeView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:id="@+id/ll_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+    >
+
+        <ImageView
+                android:id="@+id/iv_sunshine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_messages_like_selected_shining"
+                android:contentDescription="@string/like_shining"
+        />
+
+        <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-7dp"
+                android:src="@mipmap/ic_messages_like_unselected"
+                android:contentDescription="@string/like"
+        />
+
+    </LinearLayout>
+
+    <cn.artaris.customview.JikeLikeOld.JIkeLikeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/ll_image"
+            android:layout_marginStart="2dp"
+    />
+
+
+</cn.artaris.customview.JikeLikeOld.JikeLikeView>

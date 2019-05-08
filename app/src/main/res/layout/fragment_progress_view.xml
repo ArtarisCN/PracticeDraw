@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorBackground"
+>
+
+    <cn.artaris.omview.dialog.ProgressMarkView
+            android:id="@+id/progress_mark_view"
+            android:layout_marginTop="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/background_dark"
+
+            android:padding="20dp"/>
+
+    <LinearLayout
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+    >
+
+        <Button
+                android:id="@+id/btn_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/success"
+        />
+        <View android:layout_width="20dp"
+              android:layout_height="1dp"/>
+        <Button
+                android:id="@+id/btn_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading"
+        />
+
+        <View android:layout_width="20dp"
+              android:layout_height="1dp"/>
+
+        <Button
+                android:id="@+id/btn_failed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/failed"
+        />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

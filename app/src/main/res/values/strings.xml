@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CustomView</string>
+    <string name="like_shining">like_shining</string>
+    <string name="like">like</string>
+    <string name="reset">重置</string>
+
+    <string name="dash_board">DashBoard</string>
+
+    <string name="pie_chart">PieChart</string>
+
+    <string name="round_image">RoundImage</string>
+
+    <string name="progress_mark">ProgressMark</string>
+    <string name="success">成功</string>
+    <string name="failed">失败</string>
+    <string name="loading">加载</string>
+
+    <string name="cycle_percent">CyclePercent</string>
+    <string name="cycle_text_format">Percent:%d%%</string>
+
+    <string name="image_text">ImageText</string>
+
+
+    <string name="camera_view">CameraView</string>
+
+    <string name="animate_camera_view">AnimateCameraView</string>
+
+    <string name="material_edit_view">MaterialEditText</string>
+
+    <string name="tag_layout">TagLayout</string>
+
+
+
+</resources>

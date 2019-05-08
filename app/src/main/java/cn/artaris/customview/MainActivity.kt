@@ -13,7 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewStub
 import cn.artaris.customview.DashBoard.DashBoardFragment
-import cn.artaris.customview.ProgressMark.ProgressMarkFragment
+import cn.artaris.customview.ProgressMarkView.ProgressMarkFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var mPageModel = ArrayList<PageModel>()
 
     init {
+        mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_tag_layout), R.string.tag_layout))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_material_view), R.string.material_edit_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_animate_camera_view), R.string.animate_camera_view))
         mPageModel.add(PageModel(PageFragment.newInstance(R.layout.view_camera_view), R.string.camera_view))

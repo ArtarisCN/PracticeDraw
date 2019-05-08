@@ -16,7 +16,7 @@ import cn.artaris.customview.R
  * 2019.04.11  18:41
  * @author : artairs
  */
-class OMProgressMarkView : View {
+class ProgressMarkView : View {
 
     enum class StatusEnum {
         Loading,

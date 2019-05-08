@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/colorBackground"
+
+    >
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/accountinput"
+        android:theme="@style/customLineColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:hint="Password"
+        android:visibility="gone"
+        app:counterMaxLength="11"
+        >
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="phone"
+            android:textSize="26sp"
+            android:paddingBottom="10dp"
+            android:imeOptions="actionNext"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        >
+
+        <cn.artaris.customview.MaterialEditText.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hint_text="Phone"
+            android:inputType="phone"
+            android:maxLines="1"
+            />
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>
